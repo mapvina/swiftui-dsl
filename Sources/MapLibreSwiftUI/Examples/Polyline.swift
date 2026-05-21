@@ -1,0 +1,51 @@
+import InternalUtils
+import MapVina
+import MapVinaSwiftDSL
+import SwiftUI
+
+struct PolylineMapView: View {
+    let styleURL: URL
+    let waypoints: [CLLocationCoordinate2D]
+
+    var body: some View {
+        MapView(styleURL: styleURL,
+                camera: .constant(.center(waypoints.first!, zoom: 14)))
+        {
+            // Define a data source.
+            // It will be automatically if a layer references it.
+            let polylineSource = ShapeSource(identifier: "polyline") {
+                MLNPolylineFeature(coordinates: waypoints)
+            }
+
+            // Add a polyline casing for a stroke effect
+            LineStyleLayer(identifier: "polyline-casing", source: polylineSource)
+                .lineCap(.round)
+                .lineJoin(.round)
+                .lineColor(.white)
+                .lineWidth(interpolatedBy: .zoomLevel,
+                           curveType: .exponential,
+                           parameters: NSExpression(forConstantValue: 1.5),
+                           stops: NSExpression(forConstantValue: [14: 6, 18: 24]))
+                .renderBelow(.symbols)
+
+            // Add an inner (blue) polyline
+            LineStyleLayer(identifier: "polyline-inner", source: polylineSource)
+                .lineDashPattern([2.0, 0.5])
+                .lineCap(.butt)
+                .lineJoin(.round)
+                .lineColor(.systemBlue)
+                .lineWidth(interpolatedBy: .zoomLevel,
+                           curveType: .exponential,
+                           parameters: NSExpression(forConstantValue: 1.5),
+                           stops: NSExpression(forConstantValue: [14: 3, 18: 16]))
+                .renderBelow(.symbols)
+        }
+    }
+}
+
+struct Polyline_Previews: PreviewProvider {
+    static var previews: some View {
+        PolylineMapView(styleURL: demoTilesURL, waypoints: samplePedestrianWaypoints)
+            .ignoresSafeArea(.all)
+    }
+}

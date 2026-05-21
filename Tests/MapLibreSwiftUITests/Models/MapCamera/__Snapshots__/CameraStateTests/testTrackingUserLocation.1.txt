@@ -1,0 +1,1 @@
+CameraState.trackingUserLocation(zoom: (4.0, 0.0, MapVinaSwiftUI.CameraPitchRange.free, 12.0))
