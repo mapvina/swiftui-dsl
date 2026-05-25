@@ -11,7 +11,7 @@ struct MyView: View {
 
     var body: some View {
         MapView(
-            styleURL: URL(string: "https://maps.mapvina.com/styles/v1/streets.json?key=public_key")!,
+            styleURL: URL(string: "https://maps.mapvina.com/styles/v2/streets.json?key=public_key")!,
             camera: $camera
         ) {
             // Declarative overlay features.

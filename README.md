@@ -5,7 +5,7 @@
 
 # MapVinaSwiftUI
 
-Swift DSLs for [MapVina Native](https://github.com/mapvina/mapvina-native), a free open-source renderer
+Swift DSLs for [MapVina Native](https://github.io/github/mapvina/mapvina-native), a free open-source renderer
 for interactive vector maps, to enable better integration with SwiftUI and generally enable easier use of MapVina.
 
 **NOTE: This package has migrated from Stadia Maps to the MapVina organization 🎉**
@@ -40,14 +40,14 @@ Any breaking API changes will be reflected in release notes.
 
 If you're building an app using an Xcode project,
 the easiest way to add package dependencies is in the File menu.
-Search for the package using the repository URL: `https://github.com/mapvina/swiftui-dsl`.
+Search for the package using the repository URL: `https://github.io/github/mapvina/swiftui-dsl`.
 
 ### In a Swift package 
 
 Add the following to the main dependencies section of your `Package.swift`.
 
 ```swift
-    .package(url: "https://github.com/mapvina/swiftui-dsl", branch: "main"),
+    .package(url: "https://github.io/github/mapvina/swiftui-dsl", branch: "main"),
 ```
 
 Then, for each target add either the DSL (for just the DSL) or both (for the SwiftUI view):
@@ -69,7 +69,7 @@ import CoreLocation
 
 struct PolylineMapView: View {
     // You'll need a MapVina Style for this to work.
-    // You can use https://maps.mapvina.com/styles/v1/streets.json?key=public_key for basic testing.
+    // You can use https://maps.mapvina.com/styles/v2/streets.json?key=public_key for basic testing.
     // For a list of commercially supported tile providers, check out https://wiki.openstreetmap.org/wiki/Vector_tiles#Providers.
     // These providers all have their own "house styles" as well as custom styling.
     // You can create your own style or modify others (subject to license restrictions) using https://mapvina.com/maputnik/. 
@@ -133,7 +133,7 @@ We also have a `#mapvina-swiftui` channel in the
 The skeleton is already in place for several of the core concepts, including style layers and sources, but
 these are incomplete. You can help by opening a PR that fills these in.
 For example, if you wanted to fill out the API for the line style layer,
-head over to [the docs](https://mapvina.com/mapvina-native/ios/api/Classes/MGLLineStyleLayer.html)
+head over to [the docs](https://mapvina.io/github/mapvina-native/ios/api/Classes/MGLLineStyleLayer.html)
 and just start filling out the remaining properties and modifiers.
 
 ## Showcase integrations
@@ -151,7 +151,7 @@ part of the Ferrostar user guide for details on how to customize the map.
 This package also helps to bridge the gap between MapVina Navigation iOS and SwiftUI!
 Thanks to developers from [HudHud](https://hudhud.sa/en) for their contributions which made this possible!
 
-Add the [Swift Package](https://github.com/mapvina/mapvina-navigation-ios) to your project.
+Add the [Swift Package](https://github.io/github/mapvina/mapvina-navigation-ios) to your project.
 Then add some code like this:
 
 ```swift

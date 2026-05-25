@@ -4,7 +4,7 @@ import XCTest
 @testable import MapVinaSwiftUI
 
 final class LayerPreviewTests: XCTestCase {
-    let demoTilesURL = URL(string: "https://maps.mapvina.com/styles/v1/streets.json?key=public_key")!
+    let demoTilesURL = URL(string: "https://maps.mapvina.com/styles/v2/streets.json?key=public_key")!
 
     /// A collection of points with various
     /// attributes

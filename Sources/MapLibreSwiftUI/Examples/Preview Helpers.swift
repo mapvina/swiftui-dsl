@@ -2,7 +2,7 @@
 import CoreLocation
 
 let switzerland = CLLocationCoordinate2D(latitude: 47.03041, longitude: 8.29470)
-public let demoTilesURL = URL(string: "https://maps.mapvina.com/styles/v1/streets.json?key=public_key")!
+public let demoTilesURL = URL(string: "https://maps.mapvina.com/styles/v2/streets.json?key=public_key")!
 
 let austriaPolygon: [CLLocationCoordinate2D] = [
     CLLocationCoordinate2D(latitude: 49.0200, longitude: 16.9600),
