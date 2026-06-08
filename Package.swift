@@ -36,7 +36,7 @@ let package = Package(
         .trait(name: "MapVinaDeveloper"),
     ],
     dependencies: [
-        .package(url: "https://github.com/mapvina/mapvina-gl-native-distribution.git", from: "6.21.2"),
+        .package(url: "https://github.com/mapvina/mapvina-gl-native-distribution.git", from: "1.0.0"),
         // Macros
         .package(url: "https://github.com/swiftlang/swift-syntax.git", "509.0.0" ..< "603.0.0"),
         // Testing
